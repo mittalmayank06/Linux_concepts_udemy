@@ -1,0 +1,101 @@
+Module 3: File System
+
+->file system navigation (cd,ls,pwd)   --ls -l (says properties), ls -ltr(shows files when created in order)
+->Linux file types: -(regular file), d(directory), l(link),  c(special file or device file), s(socket), p(named pipe), b(block device)
+->Creating files & directories: (touch, cp, vi, mkdir)
+	-->cp -R <src_folder> <des_folder>
+->Find files & directories (find,locate)
+	->find . -name "file_name"
+	->locate file_name (mlocate package must installed)
+	(faster than find cmd ->it maintains DB should be regualarly updated ->updatedb)...
+->Soft link & Hard links (like shortcuts in window)
+*******************************************
+Module 4:
+(u-user level(3 bit-- g-grp level(3 bit)-- o-others(3 bit) )
+--rwx (read, write, executable)
+-> man chmod  (chmod cmd used to change permissions for a file or directory)
+->chmod g-w file_name  (change grp. level, write permission)
+->chmod a-r file_name (a for all level, read permission)
+->chmod u+rw file_name (give permission to userLevel)
+----------------------
+cmd to change file ownership: (chown , chgrp)
+->Access Control List(ACL)  --provides more flexible permission mechanism for file systems.
+-------------------
+Tab completion commands: chm TAB, ls j<TAB>, cd Des<TAB> (search files or directories start with j, Des, autocomplete chmod command)
+->UP Arrow key: returns last command run.
+--------------
+Adding text to file: vi editor, >(overwrite) or >>(append)
+->"tee" command : used to store & view output of any command.
+->(example) echo "hello Linux" | tee -a(option for append) file_name
+-> ls -la (to show hidden files(start with dot) )
+->wc -c file_name (count char in a file)
+------------------------
+PIPE: used by shell to connect O/P of 1 comm. directly to I/P of another command.  (|)
+-> more  //command used to print O/P page by page.
+-> tail -l   //command give us last line of O/P
+-------------
+FILE Maintenance commands:
+cp ->cp file1 new_file
+rm 
+mv  -> mv file1 new_file  (rename the file)
+mkdir
+rmdir or rm -r
+chgrp
+chown
+----------
+FILE Display commands:
+cat
+less
+more
+head 
+tail
+-----------------
+FILTERS/ TEXT processors commands:
+cut
+awk
+grep & egrep
+sort
+uniq
+wc
+--------------------
+Comapre Files: (diff(line by line) or cmp(byte by byte))
+->diff file1 file2 (tells diff.  in files line by line)
+->cmp file1 file2  (tells diff. in files byte by byte)
+----------------------
+Compress & Un-compress files:
+tar   
+->tar cvf file_name.tar .   (creates a archived file which this directory contains)
+->tar xvf file_name.tar  (unzip the file)
+gzip(compress the file more)  ->gzip file_name.tar
+gzip -d or gunzip  (unzip a file)  ->gzip -d file_name.tar.gz
+------------------------
+TRUNCATE File size:
+->truncate -s 10 file_name (file converted to 10 bytes/bits)
+-------
+Combine & split files:
+->cat file1 file2 file3  > file4
+->split -l 300 file.txt childfile
+(Split file.txt into 300 lines per file & o/p to childfileaa,childfileab, etc.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
