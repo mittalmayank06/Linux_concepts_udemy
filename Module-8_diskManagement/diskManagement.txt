@@ -1,0 +1,46 @@
+DISK MANAGEMENT & RUN LEVELS: 
+--------
+System run levels: (init 0)
+>0  shutDown (halt) the system
+>1  single-user mode, usually aliased as s/S
+>6  reboot the system
+
+>who -r //tells in which system runLevel u're?
+>2  Multiuser mode without networking
+>3  Mulitiuser mode with networking,
+>5  Mulitiuser mode with networking & GUI,
+--------------
+LINUX boot-process:
+BIOS
+MBR
+GRUB
+Kernel
+init
+Runlevel
+---------------
+STORAGE:
+>Local storage (RAM, HDD, SSD)
+>DAS (Direct attached storage)  --CD,DVD, USB,
+>SAN (Storage area network)
+>NAS (Network attached storage)
+>
+----------
+RAID (Redundant Array of Independent disks)
+-------------
+DISK Partition:
+>df
+>fdisk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
