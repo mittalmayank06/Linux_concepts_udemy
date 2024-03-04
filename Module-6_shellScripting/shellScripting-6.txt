@@ -1,0 +1,206 @@
+Shell: like a container, interface b/w user & kernel/OS,ex-CLI
+FIND YOUR SHELL:  ->echo $0, Available shells: "cat/etc/shells"
+& your shell?  /etc/passwd
+-------------
+Types of LINUX SHELLS:
+Gnome
+KDE
+sh (linux CLI shell)
+bash --MOST IMP(bourne again shell) ->advance version of 'sh'
+csh & tcsh
+ksh  (korn shell)
+------------------------------------
+SHELL SCRIPTING: an executable file contains multiple shell commands that are executed sequentially.File contains :
+->Shell (#!/bin/bash)
+->Comments (# comments)
+->Commands (echo, cp, grep,etc.)
+->Statements (if,while,for,etc.)
+---Shell Script should have executable permissions (-rwx,r-x)
+---called from absolute path(e.g, /home/userdir/script.bash)
+---if called from curr. location, ->./script.bash
+//Note: if permission denied,->chmod a+x file_name
+--------------
+Basic Scripts:
+->Output to screen using 'echo'
+->Creating tasks:  -telling your id,curr.location, files/dir.,sys.info..
+->O/p to file ">"
+->Filters/ Text processors through scripts(cut,awk,grep,sort,uniq,wc)
+------------
+SCRIPTS:
+-----
+Defining variables:
+#!/bin/bash
+
+#Example of defining variables
+# Shell scripting comment\
+a=Mayank
+b=Mittal
+c='Linux shell scripting'
+
+echo "My firstName is $a"
+echo "My lastName is $b"
+echo `this topic is $c`
+--------------
+Input(read) & O/p of a script:
+#!/bin/bash
+
+#Input given by read command
+echo "Enter your name"
+read nameVar
+echo 
+echo Hello $nameVar
+
+echo
+a=`hostname`  //hostname --variable in Linux
+echo `My hostname is $a`
+-----------
+if-then script(1):
+#!/bin/bash
+count=100
+if [$count -eq 100]
+then
+   echo Count is 100
+else
+   echo Count is not 100
+fi
+-----------
+if-then script(2):
+#!/bin/bash
+
+clear
+if[ -e /home/file_name] //-e option checks if file exists/not.
+then
+   echo "file exists"
+else
+   echo "file not exists"
+fi
+-------------- 
+FOR loops Scripts(1):
+#!/bin/bash
+
+for i in 1 2 3 4 5
+do 
+echo "Welcome $i timess"
+done
+--------------
+FOR loops Scripts(2):
+#!/bin/bash
+for i in eat run jump play
+do
+echo See Mayank $i
+done
+----------------
+do-while Scripts(1):
+->Script to run for no. of Seconds
+#!/bin/bash
+count=0
+num=10
+while [ $count -lt 10 ]
+do
+	echo
+	echo $num seconds left to stop this process $1
+	echo
+	sleep 1
+
+num=`expr $num -1`
+count=`expr $count +1`
+done 
+echo 
+echo $1 process is stopped!!!
+echo
+------------------------
+CASE statement Scripts:
+$!/bin/bash
+
+echo
+echo Please chooe one of the options below
+echo
+echo 'a = Display date and time'
+echo 'b = List file and directories'
+echo 'c = List users logged in'
+echo 'd = Check system Uptime'
+echo
+
+	read choices
+	case $choices in 
+
+a) date;;
+b) ls;;
+c) who;;
+d) uptime;;
+*) echo Invalid choice - Bye.
+	
+	esac
+---------------
+CHECK REMOTE SERVERS CONNECTIVITY:
+------------------
+ALIASES: method to short the lengthy command
+------------------------
+
+->history : shows shell history
+----------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
