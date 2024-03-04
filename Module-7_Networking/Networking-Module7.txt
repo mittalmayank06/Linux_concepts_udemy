@@ -1,0 +1,115 @@
+Switched to root user in Linux: 
+->su -
+
+->reboot //to reboot the system
+-----------------
+->ifconfig  //To get the IP address
+->ping www.google.com
+------------
+NETWORK Components:
+->IP
+->Subnet Mask : to provide mask to IP address,N/w bits:0 & host bits:1
+->Gateway : set route to which traffic in/out.
+->Static vs. DHCP : in DHCP,when reboot,IP will change in static,remains same.
+
+->Interface: NIC card,
+->Interface MAC : permanent MAC address to NIC
+-->MAC Address : OUI(Organizationally Unique Identifier),NIC(Network Interface Controlller)
+->Interface detection (Ethernet cable)
+->Assigning an IP address
+->Interface Configuration files:
+
+---------------
+NETWORK Commands:
+->ping
+->ifconfig | //tells interfaces in the system
+->ifup or ifdown   //to bring up/down the network
+->netstat    -->netstat -rnv  //tells gateway,how traffic is flowing & from which interface flowing from.
+->tcpdump     -->tcpdump -i interface_name(sniffing tool)    //traces every single transactions that leaving/coming in my machine 
+----------------------
+NIC Information (ethTool):
+->Network Interface Card (ethernet cable)
+
+->ethtool nic_name(enp0s3)
+:To find NIC name:
+->ifconfig | more //but which interface
+NICS: 
+Note: lo= Loopback device is special interface that computer uses to communicate with itself.Used for diagnostics & troubleshooting & to connect servers running on local machine.
+->virb0 -"Virtual Bridge0" //use it to connect outside N/W.
+--------------
+NIC Bonding: defined as aggregation or combination of multiple NIC into a single bond interface.
+//Purpose: To provide high availability & redundancy.
+PROCEDURE:
+->modprobe bonding
+->modinfo bonding
+->Create /etc/sysconfig/network-scripts/ifcfg-bond0
+Edit: /etc/sysconfig/network-scripts/ethernet1
+Edit: /etc/sysconfig/network-scripts/ethernet2
+->Restart Network: ->systemctl restart network
+---------------------------------
+Network Configuration Methods:
+->nmtui
+->nmcli
+->nm-connection-editor
+->GNOME Settings,
+---------------------
+Download files & Apps:
+->wget  //if no internet access
+if have internet access & need to install package:
+->yum
+---------
+->curl    -O option
+>ping
+----------------------
+Utilities to transfer files:
+->FTP
+->SCP
+->rsync
+---------
+yum(centOS), apt-get(other OS), rpm (Redhat package Manager)
+->yum install package_name(apache,httpd)
+->rpm -qa //show list of packages installed
+--------------
+SYSTEM UPGRADE/Patch Management: (v.v.Imp)
+->yum update -y
+? Diff. b/w upgrade & update?
+
+-------------
+SSH & TELNET :
+>Services run in Linux to accept connections from outside,
+---
+DNS (Domain Name Server)
+--Commands for DNS lookup/Hostname(ip) lookup:
+>nslookup
+>dig
+ex:  -nslookup www.google.com
+--------
+NTP (Network time protocol) : port#123
+->chronyd (new version of NTP),
+------
+>timedatect (new system utility command)
+---------------------
+Central Logger(RSYSLOG) :
+>generate logs/collect logs from other servers,
+--Service
+	-systemctl restart rsyslog
+	-systemctl enable rsyslog
+-------------
+LINUX OS hardening: securing linux
+-------------
+Trace Network Traffic (traceroute)
+----------
+
+DHCP Server: 
+
+
+
+
+
+
+
+
+
+
+
+
